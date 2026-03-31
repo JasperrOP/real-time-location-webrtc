@@ -1,21 +1,20 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Auth from './pages/Auth';
+import Dashboard from './pages/Dashboard';
+import Room from './pages/Room';
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        {/* The Auth Route */}
         <Route path="/auth" element={<Auth />} />
         
-        {/* A temporary placeholder for the Dashboard */}
-        <Route path="/dashboard" element={
-            <div className="min-h-screen flex items-center justify-center bg-slate-50 text-3xl font-bold text-slate-800">
-                Dashboard Coming Soon!
-            </div>
-        } />
+        {/* The new Dashboard Route */}
+        <Route path="/dashboard" element={<Dashboard />} />
         
-        {/* If they go to an unknown route, send them to the login page */}
+        {/* Placeholder for Phase 3: The Leaflet Map Room */}
+            <Route path="/room/:id" element={<Room />} />
+        
         <Route path="*" element={<Navigate replace to="/auth" />} />
       </Routes>
     </BrowserRouter>
