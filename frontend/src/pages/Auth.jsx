@@ -110,13 +110,13 @@ const Auth = () => {
     try {
       if (tab === 'login') {
         // EXACT FIX 1: Point to /auth/login and save the exact 'data' object
-        const { data } = await API.post('/auth/login', { email, password });
+        const { data } = await API.post('/api/auth/login', { email, password });
         localStorage.setItem('userProfile', JSON.stringify(data));
         navigate('/dashboard');
       } else {
         if (password.length < 6) { setError('Password must be at least 6 characters.'); setLoading(false); return; }
         // EXACT FIX 2: Point to /auth/signup and save the exact 'data' object
-        const { data } = await API.post('/auth/signup', { name, email, password });
+        const { data } = await API.post('/api/auth/signup', { name, email, password });
         localStorage.setItem('userProfile', JSON.stringify(data));
         navigate('/dashboard');
       }
