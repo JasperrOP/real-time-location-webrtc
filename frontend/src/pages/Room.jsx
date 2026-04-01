@@ -62,7 +62,7 @@ const Room = () => {
 
         // Connect switchboard
         // Connect switchboard
-socketRef.current = io('http://localhost:5000'); // <-- Updated to your IP
+socketRef.current = io('https://your-backend.onrender.com'); // <-- Updated to your IP
         socketRef.current.emit('join-room', { roomCode, user: parsedUser });
 
         // --- MAP & TRACKING EVENTS ---
