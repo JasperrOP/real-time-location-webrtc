@@ -23,7 +23,7 @@ const io = new Server(server, {
 const corsOptions = {
   origin: [
     "http://localhost:5173",
-    "https://your-frontend.vercel.app"
+    "https://real-time-location-webrtc.vercel.app"
   ],
   credentials: true
 };
