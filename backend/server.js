@@ -19,7 +19,17 @@ const io = new Server(server, {
     }
 });
 
-app.use(cors());
+// Replace app.use(cors()); with:
+const corsOptions = {
+  origin: [
+    "http://localhost:5173",
+    "https://real-time-location-webrtc.vercel.app"
+  ],
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true
+};
+
+app.use(cors(corsOptions));
 app.use(express.json());
 
 app.use('/api/auth', require('./routes/authRoutes'));
