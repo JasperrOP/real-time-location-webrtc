@@ -94,7 +94,7 @@ const Dashboard = () => {
     e.preventDefault();
     setCreateErr(''); setCreating(true);
     try {
-      const { data } = await API.post('/rooms/create', { name: roomName });
+      const { data } = await API.post('/api/rooms/create', { name: roomName });
       navigate(`/room/${data.code}`);
     } catch (err) {
       setCreateErr(err.response?.data?.message || 'Failed to create room');
@@ -105,7 +105,7 @@ const Dashboard = () => {
     e.preventDefault();
     setJoinErr(''); setJoining(true);
     try {
-      const { data } = await API.post('/rooms/join', { code: joinCode.toUpperCase() });
+      const { data } = await API.post('/api/rooms/join', { code: joinCode.toUpperCase() });
       navigate(`/room/${data.code}`);
     } catch (err) {
       setJoinErr(err.response?.data?.message || 'Invalid room code');
