@@ -23,11 +23,12 @@ const io = new Server(server, {
 const corsOptions = {
   origin: [
     "http://localhost:5173",
-    "https://real-time-location-webrtc.vercel.app"
+    "https://your-frontend.vercel.app"
   ],
-  methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
 };
+
+app.use(cors(corsOptions));
 
 app.use(cors(corsOptions));
 app.use(express.json());
