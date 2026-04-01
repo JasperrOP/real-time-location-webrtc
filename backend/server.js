@@ -19,8 +19,11 @@ const io = new Server(server, {
     }
 });
 
-app.use(cors());
-app.use(express.json());
+// Replace app.use(cors()); with:
+app.use(cors({
+    origin: "https://your-live-frontend-url.vercel.app", // Put your actual Vercel/Netlify frontend URL here
+    methods: ["GET", "POST", "PUT", "DELETE"]
+}));app.use(express.json());
 
 app.use('/api/auth', require('./routes/authRoutes'));
 app.use('/api/rooms', require('./routes/roomRoutes'));

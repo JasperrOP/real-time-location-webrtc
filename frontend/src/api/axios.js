@@ -1,6 +1,6 @@
 import axios from 'axios';
 const API = axios.create({
-    baseURL: 'https://geosync-backend-7b2h.onrender.com', // <-- Updated to your IP
+    baseURL: 'https://geosync-backend-7b2h.onrender.com/api', // <-- Updated to your IP
 });
 
 API.interceptors.request.use((req)=>{
